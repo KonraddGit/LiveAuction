@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveAuction.Api", "src\LiveAuction.Api\LiveAuction.Api.csproj", "{F13CB981-5804-4CDA-8D2E-7F9B33139FF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8A5F33BD-8A43-4911-9BB6-5C296E41E29E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F61FBB00-90E0-4F85-8381-86CF84D83A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F13CB981-5804-4CDA-8D2E-7F9B33139FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13CB981-5804-4CDA-8D2E-7F9B33139FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13CB981-5804-4CDA-8D2E-7F9B33139FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13CB981-5804-4CDA-8D2E-7F9B33139FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F13CB981-5804-4CDA-8D2E-7F9B33139FF5} = {8A5F33BD-8A43-4911-9BB6-5C296E41E29E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6D38B2D-BCC2-422E-8FFA-AF28E94BC1ED}
+	EndGlobalSection
+EndGlobal
