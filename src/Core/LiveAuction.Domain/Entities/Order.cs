@@ -1,6 +1,8 @@
-﻿namespace LiveAuction.Domain.Entities;
+﻿using LiveAuction.Domain.Common;
 
-public class Order
+namespace LiveAuction.Domain.Entities;
+
+public class Order : CommonInfoEntity
 {
     public Guid Id { get; set; }
     public Guid UserId { get; set; }

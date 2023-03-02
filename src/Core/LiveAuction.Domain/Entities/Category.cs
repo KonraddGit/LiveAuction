@@ -1,6 +1,8 @@
-﻿namespace LiveAuction.Domain.Entities;
+﻿using LiveAuction.Domain.Common;
 
-public class Category
+namespace LiveAuction.Domain.Entities;
+
+public class Category : CommonInfoEntity
 {
     public Guid CategoryID { get; set; }
     public string Name { get; set; } = string.Empty;
