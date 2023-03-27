@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Auctions\Commands\CreateAuction\" />
     <Folder Include="Features\Categories\Commands\" />
     <Folder Include="Features\Orders\" />
   </ItemGroup>
