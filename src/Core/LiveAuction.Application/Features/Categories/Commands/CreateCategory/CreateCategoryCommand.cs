@@ -1,4 +1,6 @@
-﻿namespace LiveAuction.Application.Features.Categories.Commands.CreateCategory;
+﻿using MediatR;
+
+namespace LiveAuction.Application.Features.Categories.Commands.CreateCategory;
 
 public class CreateCategoryCommand : IRequest<CreateCategoryCommandResponse>
 {

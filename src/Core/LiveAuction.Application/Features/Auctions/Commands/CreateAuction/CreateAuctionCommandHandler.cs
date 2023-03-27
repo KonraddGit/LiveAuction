@@ -6,8 +6,7 @@ using MediatR;
 
 namespace LiveAuction.Application.Features.Auctions.Commands.CreateAuction;
 
-public class CreateAuctionCommandHandler :
-    IRequestHandler<CreateAuctionCommand, Guid>
+public class CreateAuctionCommandHandler : IRequestHandler<CreateAuctionCommand, Guid>
 {
     private readonly IMapper _mapper;
     private readonly IAuctionRepository _auctionRepository;
