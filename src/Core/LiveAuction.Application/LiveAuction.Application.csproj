@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LiveAuction.Domain\LiveAuction.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
