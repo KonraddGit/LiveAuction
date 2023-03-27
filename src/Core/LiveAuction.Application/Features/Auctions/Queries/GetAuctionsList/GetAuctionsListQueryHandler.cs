@@ -21,8 +21,9 @@ public class GetAuctionsListQueryHandler : IRequestHandler<GetAuctionsListQuery,
     public async Task<List<AuctionListVm>> Handle(GetAuctionsListQuery request,
         CancellationToken cancellationToken)
     {
-        var allAuctions = (await _auctionRepository.ListAllAsync()).OrderBy(x =>
-            x.CreatedDate);
+        var allAuctions = (await _auctionRepository
+            .ListAllAsync())
+            .OrderBy(x => x.CreatedDate);
 
         return _mapper.Map<List<AuctionListVm>>(allAuctions);
     }
