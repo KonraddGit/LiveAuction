@@ -1,4 +1,4 @@
-﻿namespace LiveAuction.Application.Features.Auctions;
+﻿namespace LiveAuction.Application.Features.Auctions.Queries.GetAuctionsList;
 
 public class AuctionListVm
 {

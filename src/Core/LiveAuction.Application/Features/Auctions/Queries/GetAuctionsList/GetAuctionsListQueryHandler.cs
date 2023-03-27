@@ -3,7 +3,7 @@ using LiveAuction.Application.Contracts.Persistence;
 using LiveAuction.Domain.Entities;
 using MediatR;
 
-namespace LiveAuction.Application.Features.Auctions;
+namespace LiveAuction.Application.Features.Auctions.Queries.GetAuctionsList;
 
 public class GetAuctionsListQueryHandler : IRequestHandler<GetAuctionsListQuery,
     List<AuctionListVm>>

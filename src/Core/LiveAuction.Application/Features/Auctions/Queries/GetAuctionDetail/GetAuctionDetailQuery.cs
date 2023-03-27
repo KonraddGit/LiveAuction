@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace LiveAuction.Application.Features.Auctions;
+namespace LiveAuction.Application.Features.Auctions.Queries.GetAuctionDetail;
 
 public class GetAuctionDetailQuery : IRequest<AuctionDetailVm>
 {

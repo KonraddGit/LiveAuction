@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using LiveAuction.Application.Features.Auctions;
+using LiveAuction.Application.Features.Auctions.Queries.GetAuctionDetail;
+using LiveAuction.Application.Features.Auctions.Queries.GetAuctionsList;
 using LiveAuction.Domain.Entities;
 
 namespace LiveAuction.Application.Profiles;
