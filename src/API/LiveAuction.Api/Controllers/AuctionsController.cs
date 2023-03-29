@@ -2,6 +2,7 @@
 using LiveAuction.Application.Features.Auctions.Commands.DeleteAuction;
 using LiveAuction.Application.Features.Auctions.Commands.UpdateAuction;
 using LiveAuction.Application.Features.Auctions.Queries.GetAuctionDetail;
+using LiveAuction.Application.Features.Auctions.Queries.GetAuctionsExport;
 using LiveAuction.Application.Features.Auctions.Queries.GetAuctionsList;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -69,6 +70,15 @@ namespace LiveAuction.Api.Controllers
             await _mediator.Send(deleteAuctionCommand);
 
             return NoContent();
+        }
+
+        [HttpGet("export", Name = "ExportAuctions")]
+        public async Task<FileResult> ExportAuctions()
+        {
+            var fileDto = await _mediator.Send(new GetAuctionsExportQuery());
+
+            return File(fileDto.Data, fileDto.ContentType,
+                fileDto.AuctionExportFileName);
         }
     }
 }
