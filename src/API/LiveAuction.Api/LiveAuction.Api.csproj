@@ -8,11 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\LiveAuction.Application\LiveAuction.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\LiveAuction.Infrastructure\LiveAuction.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\LiveAuction.Persistence\LiveAuction.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

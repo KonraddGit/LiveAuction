@@ -13,7 +13,7 @@ public static class PersistenceServiceRegistration
     {
         services.AddDbContext<LiveAuctionDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString(
-                    "DefaultConnectionString")));
+                    "LiveAuctionConnectionString")));
 
         services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
         services.AddScoped<ICategoryRepository, CategoryRepository>();

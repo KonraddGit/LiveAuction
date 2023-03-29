@@ -19,7 +19,7 @@ public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
         if (!includeHistory)
         {
             allCategories
-                .ForEach(p => p.Auctions
+                .ForEach(p => p.Auctions?
                 .ToList()
                 .RemoveAll(c => c.CreatedDate < DateTime.Today));
         }
