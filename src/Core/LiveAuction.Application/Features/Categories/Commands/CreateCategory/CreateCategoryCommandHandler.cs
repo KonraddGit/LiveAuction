@@ -34,8 +34,7 @@ public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryComman
 
             foreach (var error in validationResult.Errors)
             {
-                createCategoryCommandResponse.ValidationErrors.Add(
-                    error.ErrorMessage);
+                createCategoryCommandResponse.ValidationErrors.Add(error.ErrorMessage);
             }
         }
 
@@ -44,6 +43,7 @@ public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryComman
             var category = new Category() { Name = request.Name };
 
             category = await _categoryRepository.AddAsync(category);
+
             createCategoryCommandResponse.Category = _mapper.Map<CreateCategoryDto>(
                 category);
         }

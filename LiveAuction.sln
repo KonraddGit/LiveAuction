@@ -19,15 +19,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveAuction.Application", "
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "LiveAuction.Client", "src\UI\LiveAuction.Client\LiveAuction.Client.esproj", "{35C4C221-5A3A-4270-A2D0-AE4512D9944B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "src\API", "{3DFD562F-253F-4438-AEE2-BAA236E502E6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{3DFD562F-253F-4438-AEE2-BAA236E502E6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "src\Core", "{0A593408-9206-4FC5-86D1-1C142CA053C3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0A593408-9206-4FC5-86D1-1C142CA053C3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "src\Infrastructure", "{8B1F3B77-86A1-428B-8D08-1E2C51307743}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8B1F3B77-86A1-428B-8D08-1E2C51307743}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "src\UI", "{4165BFFC-8A64-4F35-93A5-16574BD4D6E2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{4165BFFC-8A64-4F35-93A5-16574BD4D6E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveAuction.Identity", "src\Infrastructure\LiveAuction.Identity\LiveAuction.Identity.csproj", "{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveAuction.Identity", "src\Infrastructure\LiveAuction.Identity\LiveAuction.Identity.csproj", "{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveAuction.Application.UnitTests", "LiveAuction.Application.UnitTests\LiveAuction.Application.UnitTests.csproj", "{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{8B1F3B77-86A1-428B-8D08-1E2C51307743} = {8A5F33BD-8A43-4911-9BB6-5C296E41E29E}
 		{4165BFFC-8A64-4F35-93A5-16574BD4D6E2} = {8A5F33BD-8A43-4911-9BB6-5C296E41E29E}
 		{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1} = {8B1F3B77-86A1-428B-8D08-1E2C51307743}
+		{38AAD811-A85C-4E2E-A7E6-4754A4A123E1} = {F61FBB00-90E0-4F85-8381-86CF84D83A4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6D38B2D-BCC2-422E-8FFA-AF28E94BC1ED}
