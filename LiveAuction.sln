@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveAuction.Identity", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveAuction.Application.UnitTests", "test\LiveAuction.Application.UnitTests\LiveAuction.Application.UnitTests.csproj", "{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveAuction.Persistence.IntegrationTests", "test\LiveAuction.Persistence.IntegrationTests\LiveAuction.Persistence.IntegrationTests.csproj", "{05C7986D-C2D5-422A-A7B1-19A59BAB8190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveAuction.Persistence.IntegrationTests", "test\LiveAuction.Persistence.IntegrationTests\LiveAuction.Persistence.IntegrationTests.csproj", "{05C7986D-C2D5-422A-A7B1-19A59BAB8190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveAuction.Api.IntegrationTests", "test\LiveAuction.Api.IntegrationTests\LiveAuction.Api.IntegrationTests.csproj", "{468A7192-7A4A-4716-B8AD-5F0793E02668}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{05C7986D-C2D5-422A-A7B1-19A59BAB8190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05C7986D-C2D5-422A-A7B1-19A59BAB8190}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05C7986D-C2D5-422A-A7B1-19A59BAB8190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{468A7192-7A4A-4716-B8AD-5F0793E02668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468A7192-7A4A-4716-B8AD-5F0793E02668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468A7192-7A4A-4716-B8AD-5F0793E02668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468A7192-7A4A-4716-B8AD-5F0793E02668}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1} = {8B1F3B77-86A1-428B-8D08-1E2C51307743}
 		{38AAD811-A85C-4E2E-A7E6-4754A4A123E1} = {F61FBB00-90E0-4F85-8381-86CF84D83A4A}
 		{05C7986D-C2D5-422A-A7B1-19A59BAB8190} = {F61FBB00-90E0-4F85-8381-86CF84D83A4A}
+		{468A7192-7A4A-4716-B8AD-5F0793E02668} = {F61FBB00-90E0-4F85-8381-86CF84D83A4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6D38B2D-BCC2-422E-8FFA-AF28E94BC1ED}
