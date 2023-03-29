@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LiveAuction.Application.Contracts.Persistence;
+using LiveAuction.Application.Exceptions;
 using LiveAuction.Domain.Entities;
 using MediatR;
 
@@ -21,8 +22,16 @@ public class UpdateAuctionCommandHandler : IRequestHandler<UpdateAuctionCommand>
     public async Task Handle(UpdateAuctionCommand request,
         CancellationToken cancellationToken)
     {
-        var auctionToUpdate = await _auctionRepository
-            .GetByIdAsync(request.AuctionId);
+        var auctionToUpdate = await _auctionRepository.GetByIdAsync(request.AuctionId);
+
+        if (auctionToUpdate is null)
+            throw new NotFoundException(nameof(Auction), request.AuctionId);
+
+        var validator = new UpdateAuctionCommandValidator();
+        var validationResult = await validator.ValidateAsync(request);
+
+        if (validationResult.Errors.Count > 0)
+            throw new ValidationException(validationResult);
 
         _mapper.Map(request, auctionToUpdate, typeof(UpdateAuctionCommand),
             typeof(Auction));

@@ -1,4 +1,5 @@
-﻿using LiveAuction.Api.Services;
+﻿using LiveAuction.Api.Middleware;
+using LiveAuction.Api.Services;
 using LiveAuction.Api.Utility;
 using LiveAuction.Application;
 using LiveAuction.Application.Contracts;
@@ -51,7 +52,11 @@ public static class StartupExtensions
 
         app.UseRouting();
 
-        app.UseCors();
+        app.UseAuthentication();
+
+        app.UseCustomExceptionHandler();
+
+        app.UseCors("Open");
 
         app.UseAuthorization();
 

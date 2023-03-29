@@ -11,8 +11,6 @@ public class ValidationException : Exception
         ValidationErrors = new List<string>();
 
         foreach (var validationError in validationResult.Errors)
-        {
             ValidationErrors.Add(validationError.ErrorMessage);
-        }
     }
 }

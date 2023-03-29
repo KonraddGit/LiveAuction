@@ -1,5 +1,6 @@
 ﻿using LiveAuction.Application.Contracts.Infrastructure;
 using LiveAuction.Application.Models.Mail;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
@@ -9,10 +10,14 @@ namespace LiveAuction.Infrastructure.Mail;
 public class EmailService : IEmailService
 {
     private readonly EmailSettings _emailSettings;
+    private readonly ILogger<EmailService> _logger;
 
-    public EmailService(IOptions<EmailSettings> mailSettings)
+    public EmailService(
+        IOptions<EmailSettings> mailSettings,
+        ILogger<EmailService> logger)
     {
         _emailSettings = mailSettings.Value;
+        _logger = logger;
     }
 
     public async Task<bool> SendEmailAsync(Email email)
@@ -34,9 +39,13 @@ public class EmailService : IEmailService
 
         var response = await client.SendEmailAsync(sendGridMessage);
 
+        _logger.LogInformation("Email sent");
+
         if (response.StatusCode == System.Net.HttpStatusCode.Accepted ||
             response.StatusCode == System.Net.HttpStatusCode.OK)
             return true;
+
+        _logger.LogError("Email sending failed");
 
         return false;
     }

@@ -1,0 +1,8 @@
+2023-03-29 16:48:56.805 +02:00 [INF] Now listening on: https://localhost:7211
+2023-03-29 16:48:56.834 +02:00 [INF] Now listening on: http://localhost:5228
+2023-03-29 16:48:56.838 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-29 16:48:56.839 +02:00 [INF] Hosting environment: Development
+2023-03-29 16:48:56.840 +02:00 [INF] Content root path: C:\Users\Admin\source\repos\LiveAuction\src\API\LiveAuction.Api\
+2023-03-29 16:49:05.771 +02:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Auction'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-29 16:49:05.777 +02:00 [WRN] No store type was specified for the decimal property 'OrderTotal' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-03-29 16:49:07.496 +02:00 [INF] HTTP GET /api/Auctions/GetAllAuctions responded 200 in 2730.9881 ms
