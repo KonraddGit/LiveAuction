@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{4165BFFC-8A64-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveAuction.Identity", "src\Infrastructure\LiveAuction.Identity\LiveAuction.Identity.csproj", "{D9D333A1-2B7C-4D2F-9AFE-1767A11453E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveAuction.Application.UnitTests", "LiveAuction.Application.UnitTests\LiveAuction.Application.UnitTests.csproj", "{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveAuction.Application.UnitTests", "test\LiveAuction.Application.UnitTests\LiveAuction.Application.UnitTests.csproj", "{38AAD811-A85C-4E2E-A7E6-4754A4A123E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
