@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\LiveAuction.Application\LiveAuction.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\LiveAuction.Identity\LiveAuction.Identity.csproj" />
     <ProjectReference Include="..\..\Infrastructure\LiveAuction.Infrastructure\LiveAuction.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\LiveAuction.Persistence\LiveAuction.Persistence.csproj" />
   </ItemGroup>

@@ -2,6 +2,7 @@
 using LiveAuction.Application.Features.Categories.Queries.GetCategoriesList;
 using LiveAuction.Application.Features.Categories.Queries.GetCategoriesListWithAuctions;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LiveAuction.Api.Controllers
@@ -17,6 +18,7 @@ namespace LiveAuction.Api.Controllers
             _mediator = mediator;
         }
 
+        [Authorize]
         [HttpGet("all", Name = "GetAllCategories")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<List<CategoryListVm>>> GetAllCategories()

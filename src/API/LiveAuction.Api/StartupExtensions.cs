@@ -3,6 +3,7 @@ using LiveAuction.Api.Services;
 using LiveAuction.Api.Utility;
 using LiveAuction.Application;
 using LiveAuction.Application.Contracts;
+using LiveAuction.Identity;
 using LiveAuction.Infrastructure;
 using LiveAuction.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ public static class StartupExtensions
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistenceServices(builder.Configuration);
+        builder.Services.AddIdentityServices(builder.Configuration);
 
         builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
         builder.Services.AddHttpContextAccessor();
@@ -69,6 +71,35 @@ public static class StartupExtensions
     {
         services.AddSwaggerGen(c =>
         {
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Description = "Authorization header",
+                Name = "Authorization",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer"
+            });
+
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        },
+
+                        Scheme = "oauth2",
+                        Name = "Bearer",
+                        In = ParameterLocation.Header,
+                    },
+
+                    new List<string>()
+                }
+            });
+
             c.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
