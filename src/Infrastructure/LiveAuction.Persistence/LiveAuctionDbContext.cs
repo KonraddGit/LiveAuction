@@ -1,4 +1,5 @@
-﻿using LiveAuction.Domain.Common;
+﻿using LiveAuction.Application.Contracts;
+using LiveAuction.Domain.Common;
 using LiveAuction.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,9 +7,18 @@ namespace LiveAuction.Persistence;
 
 public class LiveAuctionDbContext : DbContext
 {
+    private readonly ILoggedInUserService? _loggedInUserService;
+
     public LiveAuctionDbContext(DbContextOptions<LiveAuctionDbContext> options)
         : base(options)
     {
+    }
+
+    public LiveAuctionDbContext(DbContextOptions<LiveAuctionDbContext> options,
+        ILoggedInUserService loggedInUserService)
+        : base(options)
+    {
+        _loggedInUserService = loggedInUserService;
     }
 
     public DbSet<Auction> Auctions { get; set; }
@@ -62,9 +72,11 @@ public class LiveAuctionDbContext : DbContext
             {
                 case EntityState.Modified:
                     entry.Entity.LastModifiedDate = DateTime.Now;
+                    entry.Entity.CreatedBy = _loggedInUserService.UserId;
                     break;
                 case EntityState.Added:
                     entry.Entity.CreatedDate = DateTime.Now;
+                    entry.Entity.CreatedBy = _loggedInUserService.UserId;
                     break;
                 default:
                     break;
