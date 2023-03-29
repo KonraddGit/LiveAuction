@@ -1,5 +1,6 @@
 ﻿using LiveAuction.Application.Contracts.Infrastructure;
 using LiveAuction.Application.Models.Mail;
+using LiveAuction.Infrastructure.FileExport;
 using LiveAuction.Infrastructure.Mail;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,7 @@ public static class InfrastructureServiceRegistration
             "EmailSettings"));
 
         services.AddTransient<IEmailService, EmailService>();
+        services.AddScoped<ICsvExporter, CsvExporter>();
 
         return services;
     }

@@ -1,4 +1,5 @@
-﻿using LiveAuction.Application.Features.Auctions.Commands.CreateAuction;
+﻿using LiveAuction.Api.Utility;
+using LiveAuction.Application.Features.Auctions.Commands.CreateAuction;
 using LiveAuction.Application.Features.Auctions.Commands.DeleteAuction;
 using LiveAuction.Application.Features.Auctions.Commands.UpdateAuction;
 using LiveAuction.Application.Features.Auctions.Queries.GetAuctionDetail;
@@ -60,7 +61,7 @@ namespace LiveAuction.Api.Controllers
             return NoContent();
         }
 
-        [HttpPut(Name = "DeleteAuction")]
+        [HttpDelete("{id}", Name = "DeleteAuction")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
@@ -73,6 +74,7 @@ namespace LiveAuction.Api.Controllers
         }
 
         [HttpGet("export", Name = "ExportAuctions")]
+        [FileResultContentType("text/csv")]
         public async Task<FileResult> ExportAuctions()
         {
             var fileDto = await _mediator.Send(new GetAuctionsExportQuery());

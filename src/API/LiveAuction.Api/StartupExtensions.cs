@@ -1,7 +1,9 @@
-﻿using LiveAuction.Application;
+﻿using LiveAuction.Api.Utility;
+using LiveAuction.Application;
 using LiveAuction.Infrastructure;
 using LiveAuction.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace LiveAuction.Api;
 
@@ -10,11 +12,14 @@ public static class StartupExtensions
     public static WebApplication ConfigureServices(
         this WebApplicationBuilder builder)
     {
+        AddSwagger(builder.Services);
+
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistenceServices(builder.Configuration);
 
         builder.Services.AddControllers();
+
         builder.Services.AddCors(options =>
         {
             options
@@ -22,9 +27,6 @@ public static class StartupExtensions
                 .AllowAnyHeader()
                 .AllowAnyMethod());
         });
-
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
 
         return builder.Build();
     }
@@ -34,7 +36,11 @@ public static class StartupExtensions
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                    "LiveAuction Management API");
+            });
         }
 
         app.UseHttpsRedirection();
@@ -48,6 +54,20 @@ public static class StartupExtensions
         app.MapControllers();
 
         return app;
+    }
+
+    private static void AddSwagger(IServiceCollection services)
+    {
+        services.AddSwaggerGen(c =>
+        {
+            c.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Version = "v1",
+                Title = "LiveAuction Management API"
+            });
+
+            c.OperationFilter<FileResultContentTypeOperationFilter>();
+        });
     }
 
     public static async Task ResetDatabaseAsync(this WebApplication app)
