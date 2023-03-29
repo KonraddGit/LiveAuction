@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\LiveAuction.Application\LiveAuction.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\LiveAuction.Infrastructure\LiveAuction.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\LiveAuction.Persistence\LiveAuction.Persistence.csproj" />
