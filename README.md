@@ -1,4 +1,6 @@
-# Work in progress
+# Work in progress 
+
+App building on CQRS architecture
 
 # Live Auction 
 
